@@ -6,6 +6,8 @@ import socket
 import RPi.GPIO as GPIO
 import time
 
+from setting import *
+
 switch1 = 16
 switch2 = 20
 
@@ -15,7 +17,7 @@ GPIO.setup(switch1, GPIO.OUT)
 GPIO.setup(switch2, GPIO.OUT)
 
 s = socket.socket()
-s.connect(('120.27.52.70', 20000))
+s.connect((server_ip, server_port))
 
 while True:
     data = s.recv(1)
