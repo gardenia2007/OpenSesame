@@ -23,7 +23,7 @@ while True:
     data = s.recv(1)
 
     if data == 'b':
-        print "Open the door!"
+        print time.strftime(ISOTIMEFORMAT, time.localtime()), "Open the door!"
         GPIO.output(switch1, GPIO.HIGH)
         GPIO.output(switch2, GPIO.LOW)
         time.sleep(1)
